@@ -1186,7 +1186,7 @@ if __name__ == '__main__':
 	parser.add_argument('--random_lattice_prob', type=float, default=0.0)
 	parser.add_argument('--random_inhibition_prob', type=float, default=0.0)
 	parser.add_argument('--top_percent', type=int, default=10)
-	parser.add_argument('--do_plot', type=bool, default=False)
+	parser.add_argument('--do_plot', type=bool, default=True)
 
 	args = parser.parse_args()
 	mode, connectivity, weight_dependence, post_pre, conv_size, conv_stride, conv_features, weight_sharing, lattice_structure, \
@@ -1261,6 +1261,7 @@ if __name__ == '__main__':
 	n_e_sqrt = int(math.sqrt(n_e))
 	n_i = n_e
 	conv_features_sqrt = int(math.ceil(math.sqrt(conv_features)))
+
 
 	# time (in seconds) per data example presentation and rest period in between, used to calculate total runtime
 	single_example_time = 0.35 * b.second
